@@ -1,0 +1,40 @@
+🚀 Jak spustit Steam instalátor bez oprávnění správce? 🔥
+
+Chceš nainstalovat Steam, ale instalátor pořád vyžaduje administrátorská oprávnění? V novém videu ti ukážu jednoduchý trik, jak obejít UAC a spustit SteamSetup.exe bez nutnosti správce pomocí BAT souboru.
+
+🎬 Sleduj video zde 👉 https://www.youtube.com/watch?v=wAkZoZXq2jo
+
+💡 Co se naučíš?
+✅ Jak funguje RunAsInvoker
+✅ Jak vytvořit BAT soubor pro spuštění instalátoru bez administrátora
+✅ Možné problémy a jak je vyřešit
+
+Tento trik může pomoci i u jiných programů, které vyžadují oprávnění správce. Vyzkoušej a dej mi vědět, jestli ti to fungovalo!
+
+🔽 Sdílej se svými přáteli, ať o tom ví i oni.
+
+steam, uac, bypass, windows, it, návod, hacking, bypass, admin bypass, cmd, hack, runasinvoker, hack tricks, ethical hacking, cyber security, exploit, windows hack
+
+
+je nutní aby steam nebo jiný program byl ve stejní složce jako script
+
+script
+cmd
+@echo off
+set __COMPAT_LAYER=RunAsInvoker
+start "" steamSetup.exe
+
+Pokud to stále nefunguje, vytvoř .vbs soubor, který spustí .bat bez administrátora:
+
+    Ulož tento kód jako runSteam.vbs:
+
+Set Shell = CreateObject("WScript.Shell")
+Shell.Run "cmd /c runSteam.bat", 0, False
+
+Ulož tento kód jako runSteam.bat:
+
+@echo off
+set __COMPAT_LAYER=RunAsInvoker
+start "" steamSetup.exe
+
+Spusť runSteam.vbs, ne přímo .bat.
